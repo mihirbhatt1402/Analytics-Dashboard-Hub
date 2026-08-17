@@ -107,16 +107,16 @@
       <span class="stat-lbl">Total Dashboards</span>
     </div>
     <div class="stat-tile">
+      <span class="stat-num" id="stat-biz">1</span>
+      <span class="stat-lbl">Business Manager</span>
+    </div>
+    <div class="stat-tile">
       <span class="stat-num" id="stat-ops">2</span>
       <span class="stat-lbl">Operations</span>
     </div>
     <div class="stat-tile">
       <span class="stat-num" id="stat-oem">5</span>
       <span class="stat-lbl">OEM Dashboards</span>
-    </div>
-    <div class="stat-tile">
-      <span class="stat-num" id="stat-biz">1</span>
-      <span class="stat-lbl">Business Mgmt</span>
     </div>
   </div>
 
@@ -141,7 +141,56 @@
       <p>Try a different search term.</p>
     </div>
 
-    <!-- ── Operations ──────────────────────────────────────── -->
+    <!-- ── Business Manager ────────────────────────────────────── -->
+    <section
+      class="dash-section section-biz"
+      id="sec-biz"
+      aria-labelledby="biz-heading"
+    >
+      <div class="section-header">
+        <div class="section-icon" aria-hidden="true">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="section-title-group">
+          <h2 id="biz-heading">Business Manager</h2>
+          <p class="section-count" id="biz-count">1 dashboard</p>
+        </div>
+      </div>
+
+      <div class="card-grid" id="grid-biz">
+
+        <!-- LeadBU Manager -->
+        <a
+          class="dash-card card-biz"
+          href="https://adityakumar-bikes.github.io/leadbu-manager/"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="leadbu manager"
+          data-desc="business manager and lead operations management dashboard"
+          data-category="business manager"
+          aria-label="LeadBU Manager — opens in a new tab"
+        >
+          <div class="card-body">
+            <div class="card-top">
+              <div class="card-icon" aria-hidden="true">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <span class="card-badge">Business Manager</span>
+            </div>
+            <h3 class="card-title">LeadBU Manager</h3>
+            <p class="card-desc">Business manager and lead operations management dashboard.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-cta" aria-hidden="true">
+              Open Dashboard <i class="fas fa-arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+      </div><!-- /#grid-biz -->
+    </section>
+
+    <!-- ── Operations ──────────────────────────────────────────── -->
     <section
       class="dash-section section-ops"
       id="sec-ops"
@@ -218,7 +267,7 @@
       </div><!-- /#grid-ops -->
     </section>
 
-    <!-- ── OEM Performance ─────────────────────────────────── -->
+    <!-- ── OEM Performance ─────────────────────────────────────────── -->
     <section
       class="dash-section section-oem"
       id="sec-oem"
@@ -377,55 +426,6 @@
         </a>
 
       </div><!-- /#grid-oem -->
-    </section>
-
-    <!-- ── Business Management ──────────────────────────────── -->
-    <section
-      class="dash-section section-biz"
-      id="sec-biz"
-      aria-labelledby="biz-heading"
-    >
-      <div class="section-header">
-        <div class="section-icon" aria-hidden="true">
-          <i class="fas fa-briefcase"></i>
-        </div>
-        <div class="section-title-group">
-          <h2 id="biz-heading">Business Management</h2>
-          <p class="section-count" id="biz-count">1 dashboard</p>
-        </div>
-      </div>
-
-      <div class="card-grid" id="grid-biz">
-
-        <!-- LeadBU Manager -->
-        <a
-          class="dash-card card-biz"
-          href="https://adityakumar-bikes.github.io/leadbu-manager/"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-name="leadbu manager"
-          data-desc="business management and lead operations management dashboard"
-          data-category="business management"
-          aria-label="LeadBU Manager — opens in a new tab"
-        >
-          <div class="card-body">
-            <div class="card-top">
-              <div class="card-icon" aria-hidden="true">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <span class="card-badge">Business Mgmt</span>
-            </div>
-            <h3 class="card-title">LeadBU Manager</h3>
-            <p class="card-desc">Business management and lead operations management dashboard.</p>
-          </div>
-          <div class="card-footer">
-            <span class="card-cta" aria-hidden="true">
-              Open Dashboard <i class="fas fa-arrow-right"></i>
-            </span>
-          </div>
-        </a>
-
-      </div><!-- /#grid-biz -->
     </section>
 
   </main><!-- /#main-content -->
