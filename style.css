@@ -7,7 +7,7 @@
 /* ── Design Tokens: Light Theme (default) ───────────────────── */
 :root {
   /* Backgrounds */
-  --bg:          #EEF1F7;
+  --bg:          #FFFFFF;
   --surface:     #FFFFFF;
 
   /* Operations accent: blue */
@@ -84,7 +84,7 @@
 
 /* ── Light Theme via data-theme toggle ──────────────────────── */
 [data-theme="light"] {
-  --bg:          #EEF1F7;
+  --bg:          #FFFFFF;
   --surface:     #FFFFFF;
   --accent:      #2563EB;
   --accent-dark: #1D4ED8;
