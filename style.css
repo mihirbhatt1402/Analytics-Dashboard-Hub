@@ -4,7 +4,7 @@
 ════════════════════════════════════════════════════════════════ */
 
 
-/* ── Design Tokens: Light Theme (default) ───────────────────── */
+/* ── Design Tokens: Light Theme (default) ──────────────────── */
 :root {
   /* Backgrounds */
   --bg:          #FFFFFF;
@@ -21,7 +21,7 @@
   --oem-glow:    rgba(124, 58, 237, 0.14);
   --oem-sub:     rgba(124, 58, 237, 0.08);
 
-  /* Business Management accent: green */
+  /* Business Manager accent: green */
   --biz:         #059669;
   --biz-glow:    rgba(5, 150, 105, 0.14);
   --biz-sub:     rgba(5, 150, 105, 0.08);
@@ -45,7 +45,7 @@
 }
 
 
-/* ── Dark Theme via OS preference ───────────────────────────── */
+/* ── Dark Theme via OS preference ──────────────────────── */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg:          #08101E;
@@ -70,7 +70,7 @@
   }
 }
 
-/* ── Dark Theme via data-theme toggle ───────────────────────── */
+/* ── Dark Theme via data-theme toggle ──────────────────── */
 [data-theme="dark"] {
   --bg:          #08101E;
   --surface:     #101929;
@@ -93,7 +93,7 @@
   --sh-lg:  0 8px 32px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.30);
 }
 
-/* ── Light Theme via data-theme toggle ──────────────────────── */
+/* ── Light Theme via data-theme toggle ──────────────────── */
 [data-theme="light"] {
   --bg:          #FFFFFF;
   --surface:     #FFFFFF;
@@ -206,10 +206,7 @@ a {
   font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
-}
-
-.header-spacer {
-  flex: 1;
+  white-space: nowrap;
 }
 
 .theme-toggle {
@@ -285,24 +282,25 @@ a {
 .hero-date {
   font-size: 12.5px;
   color: var(--muted);
-  margin-bottom: 36px;
+  margin-bottom: 0;
   font-variant-numeric: tabular-nums;
   opacity: .8;
 }
 
 
 /* ════════════════════════════════════════════════════════════════
-   SEARCH BAR
+   SEARCH BAR (lives in header)
 ════════════════════════════════════════════════════════════════ */
 .search-wrap {
   position: relative;
-  max-width: 440px;
-  margin: 0 auto;
+  flex: 1;
+  max-width: 480px;
+  min-width: 0;
 }
 
 .search-icon {
   position: absolute;
-  left: 15px;
+  left: 13px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--muted);
@@ -312,13 +310,13 @@ a {
 
 #search-input {
   width: 100%;
-  padding: 14px 48px 14px 42px;
+  padding: 9px 42px 9px 36px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--ink);
-  background: var(--surface);
+  background: var(--bg);
   border: 1.5px solid var(--rule);
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   box-shadow: var(--sh-sm);
   outline: none;
   transition: border-color .2s, box-shadow .2s;
@@ -335,11 +333,11 @@ a {
 
 .search-clear {
   position: absolute;
-  right: 10px;
+  right: 8px;
   top: 50%;
   transform: translateY(-50%);
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border: none;
   background: none;
   color: var(--muted);
@@ -347,7 +345,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 12px;
   border-radius: 4px;
   transition: color .2s;
 }
@@ -496,7 +494,7 @@ a {
   color: var(--oem);
 }
 
-/* Business Management: green icon chip */
+/* Business Manager: green icon chip */
 .section-biz .section-icon {
   background: var(--biz-sub);
   color: var(--biz);
@@ -589,7 +587,7 @@ a {
   --c-sub:    var(--oem-sub);
 }
 
-/* Business Management card — green palette */
+/* Business Manager card — green palette */
 .card-biz {
   --c-accent: var(--biz);
   --c-glow:   var(--biz-glow);
@@ -773,9 +771,17 @@ a {
   }
 }
 
+@media (max-width: 540px) {
+  /* Hide logo text on narrow screens to give the search bar more room */
+  .logo-text {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .header-inner {
-    padding: 0 16px;
+    padding: 0 12px;
+    gap: 10px;
   }
 
   .hero {

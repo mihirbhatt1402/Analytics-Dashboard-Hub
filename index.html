@@ -41,7 +41,26 @@
         <span class="logo-text">Analytics Hub</span>
       </div>
 
-      <div class="header-spacer"></div>
+      <!-- Live search (in header) -->
+      <div class="search-wrap" role="search">
+        <i class="fas fa-magnifying-glass search-icon" aria-hidden="true"></i>
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search dashboards…"
+          aria-label="Search dashboards by name, description or category"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button
+          class="search-clear"
+          id="search-clear"
+          aria-label="Clear search"
+          hidden
+        >
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
 
       <button
         class="theme-toggle"
@@ -74,27 +93,6 @@
     </p>
 
     <p class="hero-date" id="hero-date" aria-label="Today's date"></p>
-
-    <!-- Live search -->
-    <div class="search-wrap" role="search">
-      <i class="fas fa-magnifying-glass search-icon" aria-hidden="true"></i>
-      <input
-        type="search"
-        id="search-input"
-        placeholder="Search dashboards…"
-        aria-label="Search dashboards by name, description or category"
-        autocomplete="off"
-        spellcheck="false"
-      />
-      <button
-        class="search-clear"
-        id="search-clear"
-        aria-label="Clear search"
-        hidden
-      >
-        <i class="fas fa-xmark" aria-hidden="true"></i>
-      </button>
-    </div>
 
   </section>
 
