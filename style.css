@@ -21,6 +21,11 @@
   --oem-glow:    rgba(124, 58, 237, 0.14);
   --oem-sub:     rgba(124, 58, 237, 0.08);
 
+  /* Business Management accent: green */
+  --biz:         #059669;
+  --biz-glow:    rgba(5, 150, 105, 0.14);
+  --biz-sub:     rgba(5, 150, 105, 0.08);
+
   /* Text */
   --ink:         #111827;
   --ink-2:       #374151;
@@ -52,6 +57,9 @@
     --oem:         #A78BFA;
     --oem-glow:    rgba(167, 139, 250, 0.18);
     --oem-sub:     rgba(167, 139, 250, 0.10);
+    --biz:         #10B981;
+    --biz-glow:    rgba(16, 185, 129, 0.18);
+    --biz-sub:     rgba(16, 185, 129, 0.10);
     --ink:         #F3F4F6;
     --ink-2:       #D1D5DB;
     --muted:       #9CA3AF;
@@ -73,6 +81,9 @@
   --oem:         #A78BFA;
   --oem-glow:    rgba(167, 139, 250, 0.18);
   --oem-sub:     rgba(167, 139, 250, 0.10);
+  --biz:         #10B981;
+  --biz-glow:    rgba(16, 185, 129, 0.18);
+  --biz-sub:     rgba(16, 185, 129, 0.10);
   --ink:         #F3F4F6;
   --ink-2:       #D1D5DB;
   --muted:       #9CA3AF;
@@ -93,6 +104,9 @@
   --oem:         #7C3AED;
   --oem-glow:    rgba(124, 58, 237, 0.14);
   --oem-sub:     rgba(124, 58, 237, 0.08);
+  --biz:         #059669;
+  --biz-glow:    rgba(5, 150, 105, 0.14);
+  --biz-sub:     rgba(5, 150, 105, 0.08);
   --ink:         #111827;
   --ink-2:       #374151;
   --muted:       #6B7280;
@@ -150,7 +164,7 @@ a {
 ════════════════════════════════════════════════════════════════ */
 .site-header {
   position: sticky;
-  top: 4px;           /* sits directly beneath the accent bar */
+  top: 4px;
   z-index: 100;
   background: var(--surface);
   border-bottom: 1px solid var(--rule);
@@ -167,7 +181,6 @@ a {
   gap: 14px;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -199,7 +212,6 @@ a {
   flex: 1;
 }
 
-/* Dark / light mode toggle */
 .theme-toggle {
   width: 36px;
   height: 36px;
@@ -237,7 +249,6 @@ a {
   animation: fadeUp .55s ease both;
 }
 
-/* "Business Intelligence" category pill */
 .hero-pill {
   display: inline-flex;
   align-items: center;
@@ -485,6 +496,12 @@ a {
   color: var(--oem);
 }
 
+/* Business Management: green icon chip */
+.section-biz .section-icon {
+  background: var(--biz-sub);
+  color: var(--biz);
+}
+
 .section-title-group h2 {
   font-size: 16px;
   font-weight: 700;
@@ -531,7 +548,6 @@ a {
     border-color   .22s ease;
 }
 
-/* Left category stripe — colored per card type via --c-accent */
 .dash-card::before {
   content: '';
   position: absolute;
@@ -543,7 +559,6 @@ a {
   transition: width .2s ease;
 }
 
-/* Hover: lift, larger shadow, border glow */
 .dash-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--sh-lg), 0 0 0 1.5px var(--c-accent);
@@ -554,7 +569,6 @@ a {
   width: 4px;
 }
 
-/* Keyboard focus ring */
 .dash-card:focus-visible {
   box-shadow: 0 0 0 3px var(--c-glow), var(--sh-md);
   border-color: var(--c-accent);
@@ -575,7 +589,13 @@ a {
   --c-sub:    var(--oem-sub);
 }
 
-/* Card body region */
+/* Business Management card — green palette */
+.card-biz {
+  --c-accent: var(--biz);
+  --c-glow:   var(--biz-glow);
+  --c-sub:    var(--biz-sub);
+}
+
 .card-body {
   padding: 20px 20px 14px 24px;
   flex: 1;
@@ -589,7 +609,6 @@ a {
   margin-bottom: 14px;
 }
 
-/* Icon circle */
 .card-icon {
   width: 40px;
   height: 40px;
@@ -608,7 +627,6 @@ a {
   transform: scale(1.1);
 }
 
-/* Category badge pill */
 .card-badge {
   font-size: 10px;
   font-weight: 600;
@@ -638,7 +656,6 @@ a {
   line-height: 1.55;
 }
 
-/* Card footer: "Open Dashboard →" */
 .card-footer {
   padding: 11px 20px 14px 24px;
   border-top: 1px solid var(--rule);
@@ -670,7 +687,6 @@ a {
   transform: translateX(2px);
 }
 
-/* Hidden when search filters it out */
 .dash-card.hidden {
   display: none;
 }
@@ -725,7 +741,6 @@ a {
    RESPONSIVE BREAKPOINTS
 ════════════════════════════════════════════════════════════════ */
 
-/* Tablet */
 @media (max-width: 768px) {
   .hero {
     padding: 44px 20px 36px;
@@ -758,7 +773,6 @@ a {
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .header-inner {
     padding: 0 16px;
@@ -772,7 +786,6 @@ a {
     padding: 0 16px;
   }
 
-  /* Two-column stat tiles on mobile */
   .stat-tile {
     max-width: none;
     flex: 1 1 calc(50% - 7px);

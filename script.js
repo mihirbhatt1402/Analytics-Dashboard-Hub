@@ -42,10 +42,8 @@ function resolveInitialTheme() {
     : 'light';
 }
 
-// Apply on first load
 applyTheme(resolveInitialTheme());
 
-// Toggle on button click
 themeBtn.addEventListener('click', () => {
   const current = root.getAttribute('data-theme');
   applyTheme(current === 'dark' ? 'light' : 'dark');
@@ -79,20 +77,22 @@ const noResults   = document.getElementById('no-results');
 // Sections
 const secOps = document.getElementById('sec-ops');
 const secOem = document.getElementById('sec-oem');
+const secBiz = document.getElementById('sec-biz');
 
 // Statistic tiles
 const statTotal = document.getElementById('stat-total');
 const statOps   = document.getElementById('stat-ops');
 const statOem   = document.getElementById('stat-oem');
+const statBiz   = document.getElementById('stat-biz');
 
 // Section sub-counts
 const opsCount = document.getElementById('ops-count');
 const oemCount = document.getElementById('oem-count');
+const bizCount = document.getElementById('biz-count');
 
 // All dashboard cards
 const allCards = Array.from(document.querySelectorAll('.dash-card'));
 
-/** Return "<n> dashboard" or "<n> dashboards" */
 function pluralize(n) {
   return n + (n === 1 ? ' dashboard' : ' dashboards');
 }
@@ -100,7 +100,6 @@ function pluralize(n) {
 function runSearch(query) {
   const term = query.trim().toLowerCase();
 
-  // Show / hide the clear button
   if (term.length > 0) {
     clearBtn.removeAttribute('hidden');
   } else {
@@ -110,6 +109,7 @@ function runSearch(query) {
   let total = 0;
   let opsN  = 0;
   let oemN  = 0;
+  let bizN  = 0;
 
   allCards.forEach(card => {
     const name     = card.getAttribute('data-name')     || '';
@@ -127,23 +127,23 @@ function runSearch(query) {
       total++;
       if (card.closest('#sec-ops')) opsN++;
       if (card.closest('#sec-oem')) oemN++;
+      if (card.closest('#sec-biz')) bizN++;
     }
   });
 
-  // Update stat tiles
   statTotal.textContent = total;
   statOps.textContent   = opsN;
   statOem.textContent   = oemN;
+  statBiz.textContent   = bizN;
 
-  // Update section sub-counts
   opsCount.textContent = pluralize(opsN);
   oemCount.textContent = pluralize(oemN);
+  bizCount.textContent = pluralize(bizN);
 
-  // Show / hide entire sections when empty
   secOps.style.display = opsN === 0 ? 'none' : '';
   secOem.style.display = oemN === 0 ? 'none' : '';
+  secBiz.style.display = bizN === 0 ? 'none' : '';
 
-  // No-results placeholder
   if (total === 0) {
     noResults.removeAttribute('hidden');
   } else {
@@ -151,7 +151,6 @@ function runSearch(query) {
   }
 }
 
-// Wire up input and clear button
 searchInput.addEventListener('input', e => runSearch(e.target.value));
 
 clearBtn.addEventListener('click', () => {
@@ -166,7 +165,7 @@ clearBtn.addEventListener('click', () => {
 allCards.forEach(card => {
   card.addEventListener('keydown', e => {
     if (e.key === ' ') {
-      e.preventDefault(); // prevent page scroll
+      e.preventDefault();
       window.open(card.getAttribute('href'), '_blank', 'noopener,noreferrer');
     }
   });
