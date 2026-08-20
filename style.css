@@ -486,6 +486,7 @@ a { text-decoration: none; color: inherit; }
   width: 3px;
   background: var(--c-accent);
   transition: width .2s ease;
+  z-index: 1;
 }
 
 .dash-card:hover {
@@ -529,20 +530,6 @@ a { text-decoration: none; color: inherit; }
   flex-shrink: 0;
   transition: transform .22s cubic-bezier(.34, 1.56, .64, 1);
   overflow: hidden;
-}
-
-/* Brand logo icons — white background so logos render correctly */
-.card-icon.brand-icon {
-  background: #ffffff;
-  border: 1px solid var(--rule);
-  padding: 6px;
-}
-
-.card-icon.brand-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
 }
 
 .dash-card:hover .card-icon { transform: scale(1.1); }
@@ -597,6 +584,48 @@ a { text-decoration: none; color: inherit; }
 
 
 /* ════════════════════════════════════════════════════════════════
+   OEM BRAND LOGO BANNER
+   Full-width header strip at the top of OEM cards
+════════════════════════════════════════════════════════════════ */
+.card-logo-banner {
+  width: 100%;
+  height: 116px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-logo-banner img {
+  max-width: 100%;
+  max-height: 84px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Card body that follows a logo banner: tighter top pad, badge above title */
+.card-logo-banner + .card-body {
+  padding: 16px 20px 12px 24px;
+}
+
+.card-logo-banner + .card-body .card-badge {
+  display: inline-flex;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.card-logo-banner + .card-body .card-title {
+  margin-bottom: 6px;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
    FOOTER
 ════════════════════════════════════════════════════════════════ */
 .site-footer {
@@ -638,6 +667,8 @@ a { text-decoration: none; color: inherit; }
   .stat-num { font-size: 26px; }
   .card-grid { grid-template-columns: 1fr; gap: 14px; }
   .main-content { padding-bottom: 48px; }
+  .card-logo-banner { height: 100px; padding: 10px 24px; }
+  .card-logo-banner img { max-height: 72px; }
 }
 
 @media (max-width: 540px) {
@@ -651,6 +682,8 @@ a { text-decoration: none; color: inherit; }
   .stat-tile { max-width: none; flex: 1 1 calc(50% - 7px); }
   .main-content { padding: 0 16px 48px; }
   .site-footer { padding: 20px 16px; }
+  .card-logo-banner { height: 90px; padding: 8px 20px; }
+  .card-logo-banner img { max-height: 66px; }
 }
 
 
