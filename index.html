@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BikeDekho Business Analytics</title>
-  <meta name="description" content="Centralized access to all business intelligence dashboards — Mihir Bhatt" />
+  <meta name="description" content="BikeDekho Business Analytics — Mihir Bhatt" />
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,13 +28,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 24px;
+      gap: 8px;
+      margin-bottom: 20px;
     }
     .hero-brand-text {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 800;
-      color: #2C3E50;
+      color: #2C3A47;
       letter-spacing: -0.5px;
     }
     @media (prefers-color-scheme: dark) {
@@ -101,11 +101,14 @@
 
     <!-- BikeDekho brand logo -->
     <div class="hero-brand" aria-hidden="true">
-      <svg viewBox="0 0 240 195" xmlns="http://www.w3.org/2000/svg" width="110" height="90">
-        <!-- wheel ring -->
-        <circle cx="120" cy="140" r="62" fill="none" stroke="#E53935" stroke-width="30"/>
-        <!-- handlebar -->
-        <rect x="5" y="50" width="230" height="30" rx="15" fill="#E53935"/>
+      <!--
+        BikeDekho icon: thick ring (wheel) + thick horizontal bar (handlebar)
+        Ring: cx=100, cy=120, r=54, stroke-width=28  →  outer top at y=52
+        Bar:  y=56 to y=84  →  outer arc peeks 4px above bar, inner arc at y=94 below bar
+      -->
+      <svg viewBox="0 0 200 196" xmlns="http://www.w3.org/2000/svg" width="108" height="106">
+        <circle cx="100" cy="120" r="54" fill="none" stroke="#E53935" stroke-width="28"/>
+        <rect x="4" y="56" width="192" height="28" rx="14" fill="#E53935"/>
       </svg>
       <span class="hero-brand-text">BikeDekho</span>
     </div>
@@ -118,10 +121,6 @@
     <h1 id="hero-title">
       BikeDekho Business Analytics
     </h1>
-
-    <p class="hero-sub">
-      Centralized access to all business intelligence dashboards.
-    </p>
 
     <p class="hero-date" id="hero-date" aria-label="Today's date"></p>
 
