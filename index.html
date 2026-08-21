@@ -22,6 +22,26 @@
 
   <!-- Project stylesheet -->
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .hero-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .hero-brand-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #2C3E50;
+      letter-spacing: -0.5px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .hero-brand-text { color: #f1f5f9; }
+    }
+    :root[data-theme="dark"] .hero-brand-text { color: #f1f5f9; }
+  </style>
 </head>
 <body>
 
@@ -34,15 +54,11 @@
   <header class="site-header">
     <div class="header-inner">
 
-      <div class="logo" aria-label="BikeDekho Analytics home">
+      <div class="logo" aria-label="Analytics Hub home">
         <div class="logo-icon" aria-hidden="true">
-          <!-- BikeDekho brand icon: handlebar + wheel ring -->
-          <svg viewBox="0 0 100 95" xmlns="http://www.w3.org/2000/svg" width="36" height="34" style="display:block">
-            <circle cx="50" cy="63" r="28" fill="none" stroke="#E53935" stroke-width="14"/>
-            <rect x="1" y="25" width="98" height="14" rx="7" fill="#E53935"/>
-          </svg>
+          <i class="fas fa-layer-group"></i>
         </div>
-        <span class="logo-text">BikeDekho</span>
+        <span class="logo-text">Analytics Hub</span>
       </div>
 
       <!-- Live search (in header) -->
@@ -82,6 +98,17 @@
        HERO
   ═══════════════════════════════════════════════════════════ -->
   <section class="hero" aria-labelledby="hero-title">
+
+    <!-- BikeDekho brand logo -->
+    <div class="hero-brand" aria-hidden="true">
+      <svg viewBox="0 0 240 195" xmlns="http://www.w3.org/2000/svg" width="110" height="90">
+        <!-- wheel ring -->
+        <circle cx="120" cy="140" r="62" fill="none" stroke="#E53935" stroke-width="30"/>
+        <!-- handlebar -->
+        <rect x="5" y="50" width="230" height="30" rx="15" fill="#E53935"/>
+      </svg>
+      <span class="hero-brand-text">BikeDekho</span>
+    </div>
 
     <p class="hero-pill" aria-hidden="true">
       <i class="fas fa-chart-bar"></i>
