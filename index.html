@@ -101,11 +101,6 @@
 
     <!-- BikeDekho brand logo -->
     <div class="hero-brand" aria-hidden="true">
-      <!--
-        BikeDekho icon: thick ring (wheel) + thick horizontal bar (handlebar)
-        Ring: cx=100, cy=120, r=54, stroke-width=28  →  outer top at y=52
-        Bar:  y=56 to y=84  →  outer arc peeks 4px above bar, inner arc at y=94 below bar
-      -->
       <svg viewBox="0 0 200 196" xmlns="http://www.w3.org/2000/svg" width="108" height="106">
         <circle cx="100" cy="120" r="54" fill="none" stroke="#E53935" stroke-width="28"/>
         <rect x="4" y="56" width="192" height="28" rx="14" fill="#E53935"/>
@@ -131,7 +126,7 @@
   ═══════════════════════════════════════════════════════════ -->
   <div class="stats-row" aria-label="Dashboard counts">
     <div class="stat-tile">
-      <span class="stat-num" id="stat-total">9</span>
+      <span class="stat-num" id="stat-total">10</span>
       <span class="stat-lbl">Total Dashboards</span>
     </div>
     <div class="stat-tile">
@@ -143,7 +138,7 @@
       <span class="stat-lbl">Delivery Trackers</span>
     </div>
     <div class="stat-tile">
-      <span class="stat-num" id="stat-oem">6</span>
+      <span class="stat-num" id="stat-oem">7</span>
       <span class="stat-lbl">OEM Dashboards</span>
     </div>
   </div>
@@ -249,7 +244,7 @@
         <div class="section-icon" aria-hidden="true"><i class="fas fa-motorcycle"></i></div>
         <div class="section-title-group">
           <h2 id="oem-heading">OEM Performance</h2>
-          <p class="section-count" id="oem-count">6 dashboards</p>
+          <p class="section-count" id="oem-count">7 dashboards</p>
         </div>
       </div>
       <div class="card-grid" id="grid-oem">
@@ -368,6 +363,33 @@
           <div class="card-body">
             <span class="card-badge">OEM</span>
             <h3 class="card-title">Harley-Davidson X440 Lead Performance</h3>
+          </div>
+          <div class="card-footer">
+            <span class="card-cta" aria-hidden="true">Open Dashboard <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- Ather Energy -->
+        <a class="dash-card card-oem"
+          href="https://mihirbhatt1402.github.io/Ather-Lead-performance-dashboard/ATHER_LDR/ATHER_LDR_Dashboard_v1.0.html"
+          target="_blank" rel="noopener noreferrer"
+          data-name="ather energy lead performance dashboard"
+          data-desc="lead performance analytics for ather energy ev campaigns"
+          data-category="oem performance"
+          aria-label="Ather Energy Lead Performance Dashboard — opens in a new tab">
+          <div class="card-logo-banner">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Ather_Energy_logo.svg" alt="Ather Energy logo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            />
+            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center">
+              <svg viewBox="0 0 160 60" xmlns="http://www.w3.org/2000/svg" height="48">
+                <text x="80" y="42" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="36" font-weight="900" fill="#1B2A47" letter-spacing="2">ather</text>
+              </svg>
+            </div>
+          </div>
+          <div class="card-body">
+            <span class="card-badge">OEM</span>
+            <h3 class="card-title">Ather Energy Lead Performance</h3>
           </div>
           <div class="card-footer">
             <span class="card-cta" aria-hidden="true">Open Dashboard <i class="fas fa-arrow-right"></i></span>
